@@ -31,7 +31,7 @@
         <!-- Center -->
         <div class="cenCon scrollBox">
           <div class="box">
-            Center
+            CenterCenterCenterCenterCenterCenterCenter
           </div>
         </div>
         <!-- //Center -->
@@ -48,7 +48,7 @@
             </ul>
           </div>
           <!-- 고객정보 -->
-          <div class="ritBox on">
+          <div class="ritBox">
             RIGHT
           </div>
 
@@ -70,9 +70,10 @@ export default {
     }
   },
   created () {
-    this.changLayer = document.body.clientWidth > 1280
+    this.changLayer = document.body.clientWidth > 1585
     window.addEventListener('resize', (event) => {
-      this.changLayer = document.body.clientWidth > 1280
+      console.log(document.body.clientWidth)
+      this.changLayer = document.body.clientWidth > 1585
     })
   }
 }
@@ -89,9 +90,11 @@ body {
     position: absolute;
     top:0;
     left:0;
+    z-index:1;
     width: 100%;
     height:80px;
     border-bottom: 1px solid #E5E8F2;
+    background-color:#fff;
   }
   #nav {
     position: absolute;
@@ -100,6 +103,7 @@ body {
     padding-top: 80px;
     width: 100px;
     height: 100%;
+    border-right: 1px solid #E5E8F2;
   }
   #content {
     position: relative;
@@ -115,13 +119,18 @@ body {
       position:absolute;
       top: 0;
       left: 306px;
-      border-bottom: 1px solid #E5E8F2;
+      z-index: 1;
       width: 100%;
       height: 65px;
       overflow:hidden;
+      border-bottom: 1px solid #E5E8F2;
+      background-color:#fff;
     }
     .leftCon {
+      position: relative;
+      z-index: 1;
       width: 306px;
+      height: 100%;
       border-right: 1px solid #E5E8F2;
     }
     .cenCon {
@@ -132,6 +141,7 @@ body {
       width: 100%;
       height: 100%;
       text-align: center;
+      background-color:#fff;
       .box {
         height: 100%;
         border-right: 1px solid #E5E8F2;
@@ -139,8 +149,9 @@ body {
     }
     .ritCon {
       position: absolute;
-      top:65px;
+      top:0;
       right:0;
+      padding-top:65px;
       padding-right: 65px;
       width:453px;
       height: 100%;
@@ -149,68 +160,22 @@ body {
         position: absolute;
         top:0;
         right:0;
+        padding-top: 65px;
         width: 65px;
         height: 100%;
         border-left: 1px solid #DFE3E8;
         background-color:#F9F9F9;
       }
       .ritBox {
-        display: none;
-        &.on {
-          display: block;
-        }
-        .ritTit {
-          position:relative;
-          padding: 0 0 0 40px;
-          font-size: 18px;
-          line-height: 52px;
-          font-weight: bold;
-          color: #121212;
-          border-bottom: 1px solid #DFE3E8;
-          .close {
-            position: absolute;
-            top:0;
-            right: 10px;
-            a {
-              display:inline-block;
-              padding: 0 10px;
-              line-height:30px;
-            }
-          }
-        }
-        .subTit {
-          position:relative;
-          padding: 0 0 0 47px;
-          font-size: 14px;
-          line-height: 45px;
-          font-weight: bold;
-          color: #121212;
-          border-bottom: 1px solid #DFE3E8;
-        }
-        .subTopTit {
-          font-size: 14px;
-          line-height: 40px;
-          font-weight: bold;
-          text-align:center;
-          color:#666C84;
-          border-top:1px solid #C4CDD5;
-          border-bottom:1px solid #C4CDD5;
-          background-color: #F0F0FA;
-        }
       }
     }
     &.ritPop {
       .cenCon {
         padding-right: 0;
+        max-width: 1031px;
       }
-      @media screen and (max-width: 1280px) {
-        .cenCon {
-          width: 100%;
-          min-width: 826px;
-          text-align:left;
-          border-bottom:1px solid #C4CDD5;
-          // background-color:red;
-        }
+      .ritCon {
+        box-shadow: 0 3px 9px 3px #dee0f57a;
       }
     }
   }
