@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import start from '@/views/Start'
-import call from '@/views/Call'
+import call from '@/views/call/Index'
 
 Vue.use(Router)
 
