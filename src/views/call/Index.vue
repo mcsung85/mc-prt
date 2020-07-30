@@ -8,51 +8,18 @@
     </nav>
     <div id="content">
       <!-- 실제 사용 될 마크업 -->
-      <div class="callCon" :class="{ritPop: !changLayer}">
-        <!-- callList -->
-        <div class="callList">
-          <div>{{changLayer}}Call 상담 대기중 <span>(8)</span></div>
-          <ul>
-            <li>010-1234-1234</li>
-            <li>010-1234-1234</li>
-            <li>010-1234-1234</li>
-          </ul>
-        </div>
-        <!-- callList -->
+      <div class="callCon">
 
         <!-- Left -->
-        <div class="leftCon scrollBox">
-          <div class="box">
-            LEFT
-          </div>
-        </div>
+        <left></left>
         <!-- //Left -->
 
         <!-- Center -->
-        <div class="cenCon scrollBox">
-          <div class="box">
-            CenterCenterCenterCenterCenterCenterCenter
-          </div>
-        </div>
+        <center></center>
         <!-- //Center -->
 
         <!-- Right -->
-        <div class="ritCon scrollBox">
-          <div class="ritNav">
-            <ul>
-              <li>icon</li>
-              <li>icon</li>
-              <li>icon</li>
-              <li>icon</li>
-              <li>icon</li>
-            </ul>
-          </div>
-          <!-- 고객정보 -->
-          <div class="ritBox">
-            RIGHT
-          </div>
-
-        </div>
+        <right></right>
         <!-- //Right -->
 
       </div>
@@ -61,11 +28,18 @@
   </div>
 </template>
 <script>
+import Left from './components/Left'
+import Right from './components/Right'
+import Center from './components/Center'
 export default {
   name: 'Call',
+  components: {
+    Left,
+    Center,
+    Right
+  },
   data () {
     return {
-      changLayer: false
     }
   },
   created () {
